@@ -200,9 +200,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🤝 Contributing
 
 Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
-
-## ✍️ Auteur
-
-**Saad El Mabrouk**  
-📚 TP Big Data Spark
-📅 Avril 2025
