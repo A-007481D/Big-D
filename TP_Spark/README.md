@@ -1,53 +1,123 @@
 
-# 📊 Sales Analytics with Apache Spark
+# 🛍️ Retail Sales Analytics with Apache Spark
 
-This project demonstrates **parallel** and **distributed** processing of sales data using **Apache Spark** with Java. It's designed to analyze retail sales data across different cities and products, with support for both local development and Docker-based cluster deployment.
+A comprehensive big data application that processes and analyzes retail sales data using Apache Spark's RDD API. This project demonstrates batch processing of sales transactions to extract meaningful business insights.
 
----
+## 📋 Project Overview
 
-## 🎯 Project Overview
+This application processes retail sales data to provide valuable business intelligence, including:
 
-This project includes two main analytical components:
+- **Total Sales by City**: Aggregates sales figures across different cities
+- **Annual Sales Analysis**: Breaks down sales by city and year for trend analysis
+- **Product Performance**: Analyzes sales performance across different product categories
 
-1. **Sales Analysis by City**
-   - Processes sales data from `ventes.txt`
-   - Calculates total sales per city
-   - Provides insights into regional sales performance
+### 🧩 Key Features
 
-2. **Annual Sales Analysis**
-   - Groups sales data by both city and year
-   - Enables year-over-year sales comparison
-   - Helps identify seasonal trends and growth patterns
+- **Data Processing**: Efficiently processes large volumes of sales data
+- **Parallel Processing**: Leverages Spark's distributed computing capabilities
+- **Flexible Deployment**: Can run locally or on a Spark cluster
+- **Detailed Reporting**: Generates comprehensive sales reports
 
-### Sample Data Format
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Java 17 or higher
+- Apache Spark 3.5.0
+- Maven 3.6.3+
+
+### Data Format
+
+The application processes sales data in the following format:
 ```
-date        city        product         price
+DD/MM/YYYY  City        Product         Price
+27/01/2025  Tangier     AsusZenBook     5950
 10/02/2024  Tangier     HPEnvy          6126
 14/07/2023  Fes         Iphone15       10123
-09/07/2023  Tangier     OppoReno11      8886
 ```
 
----
-
-## 📁 Arborescence
+### Project Structure
 
 ```
 TP_Spark/
+├── data/                   # Sample sales data
+│   └── ventes.txt
 ├── src/
-│   └── main/java/Main.java
-├── ventes.txt
-├── pom.xml
-└── target/TP_Spark-1.0-SNAPSHOT.jar
+│   └── main/
+│       └── java/
+│           └── com/
+│               └── retail/
+│                   └── analytics/
+│                       └── SalesAnalyzer.java  # Main application
+├── target/                # Compiled artifacts
+├── pom.xml                # Maven configuration
+└── README.md              # This file
 ```
 
----
+## 🛠️ Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd BigDataProject/TP_Spark
+   ```
+
+2. **Build the project**
+   ```bash
+   mvn clean package
+   ```
+
+3. **Run the application**
+   ```bash
+   spark-submit --class com.retail.analytics.SalesAnalyzer target/TP_Spark-1.0-SNAPSHOT.jar
+   ```
+
+## 📊 Sample Output
+
+The application generates the following analytics:
+
+1. **Total Sales by City**
+   ```
+   City        | Total Sales
+   ------------|------------
+   Tangier     | $1,234,567
+   Casablanca  | $1,123,456
+   Rabat       | $987,654
+   ```
+
+2. **Sales by City and Year**
+   ```
+   City        | Year | Total Sales
+   ------------|------|------------
+   Tangier     | 2024 | $456,789
+   Tangier     | 2023 | $389,012
+   Casablanca  | 2024 | $512,345
+   ```
 
 ## 🛠️ Technology Stack
 
-- **Java 17** - Modern Java version for better performance
-- **Apache Spark 3.5.0** - Distributed processing engine
-- **Maven** - Dependency management
-- **Docker & Docker Compose** - Containerization and orchestration
+- **Java 17**: Modern Java version for better performance
+- **Apache Spark 3.5.0**: Distributed processing engine
+- **Maven**: Dependency management
+- **Log4j**: Logging framework
+
+## 📝 Notes
+
+- The application is configured to run in local mode by default
+- For production deployment, update the Spark configuration in `SalesAnalyzer.java`
+- Sample data is provided in the `data` directory
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📜 License
+
+This project is licensed under the MIT License - see the [LICENSE](../LICENSE) file for details.
+
+---
+👩‍💻 **Author**: Aisha Saasaa  
+📅 **Last Updated**: August 2024
 - **Git** - Version control
 
 ---
